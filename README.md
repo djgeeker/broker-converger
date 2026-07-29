@@ -7,10 +7,12 @@ Not a backtester, not a strategy library, not a broker client. It is the thin,
 boring layer between "my strategy decided something" and "the broker actually
 has it" — the layer where order-management bugs live.
 
+```bash
+pip install git+https://github.com/djgeeker/broker-converger      # core, zero dependencies
+pip install "broker-converger[ib] @ git+https://github.com/djgeeker/broker-converger"   # + Interactive Brokers adapter
 ```
-pip install broker-converger        # core, zero dependencies
-pip install broker-converger[ib]    # + Interactive Brokers adapter
-```
+
+Not on PyPI yet — install from source.
 
 ---
 
