@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "broker-converger"
+version = "0.1.0"
+description = "Desired-state convergence for broker orders: read before act, one corrective per cycle, never trust the echo."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["trading", "interactive-brokers", "ibkr", "order-management",
+            "reconciliation", "idempotency", "execution", "algorithmic-trading"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = []
+
+[project.optional-dependencies]
+# The core is broker-agnostic and dependency-free.  The IB adapter needs a
+# client library; ib_async is the maintained successor to ib_insync.
+ib = ["ib_async>=1.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
